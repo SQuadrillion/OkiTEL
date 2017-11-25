@@ -6,6 +6,7 @@ class BroadcastRegisterJob < ApplicationJob
     # TODO: Implements This Job
     ActionCable.server.broadcast "register_channel", {
         is_delete: is_delete,
+        id: register_obj.id,
         name: register_obj.name,
         number: register_obj.number,
         range: register_obj.range,
