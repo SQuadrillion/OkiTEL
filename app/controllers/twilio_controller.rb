@@ -1,5 +1,5 @@
 class TwilioController < ApplicationController
   def callback
-    puts params
+    render json: params
   end
 end
