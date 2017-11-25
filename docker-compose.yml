@@ -1,0 +1,41 @@
+version: '2'
+services:
+  db_data:
+    image: busybox
+    volumes:
+      - /var/lib/mysql
+      - /share
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    volumes_from:
+      - db_data
+    ports:
+      - "3306:3306"
+  nginx:
+    build:
+      context: ./docker/nginx
+    command: "nginx -g 'daemon off;'"
+    ports:
+      - '80:80'
+      - '443:443'      
+    volumes_from:
+      - db_data
+    depends_on:
+      - db_data
+    links:
+      - web
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/rails/Dockerfile
+    command: "bundle exec unicorn -p 3000 -c ./docker/rails/unicorn.rb"
+    volumes_from:
+      - db_data
+    volumes:
+      - .:/myapp
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
