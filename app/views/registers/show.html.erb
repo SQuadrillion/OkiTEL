@@ -1,4 +1,29 @@
 <p id="notice"><%= notice %></p>
 
+<div class="name">
+  <p>おなまえ: </p>
+  <%= @register.name %>
+</div>
+
+<div class="phone_number">
+    <p>電話番号: </p>
+    <%= @register.number %>
+</div>
+
+<div class="range">
+    <p>許容: </p>
+    <%= @register.range %>
+</div>
+
+<div class="time">
+  <p>起こして欲しい時間: </p>
+  <%= process_datetime(@register.time) %>
+</div>
+
+<div class="todo">
+  <p>なにするの</p>
+  <%= @register.todo %>
+</div>
+
 <%= link_to 'Edit', edit_register_path(@register) %> |
 <%= link_to 'Back', registers_path %>
