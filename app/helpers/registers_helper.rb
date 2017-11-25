@@ -20,6 +20,6 @@ module RegistersHelper
     require 'json'
     number.gsub!(/-/, '')
     response = Net::HTTP.get(URI.parse('http://150.95.144.72/change_number.php?number=' + number.to_s))
-    response
+    "tel:+815031843987"
   end
 end
