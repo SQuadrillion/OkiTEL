@@ -57,6 +57,9 @@ class RegistersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def register_params
+      params[:register][:number] = "#{params[:register][:number_1]}-#{params[:register][:number_2]}-#{params[:register][:number_3]}"
+      3.times{ |i| params[:register].delete("number_#{i+1}".intern) }
+      puts params
       params.require(:register).permit(:name, :number, :range, :time, :todo)
     end
 end
