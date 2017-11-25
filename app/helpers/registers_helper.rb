@@ -1,4 +1,6 @@
 module RegistersHelper
+
+
   def process_datetime datetime
     # 2017-11-25 10:45:00 UTC
     current_time = Time.now
@@ -10,5 +12,14 @@ module RegistersHelper
     end
 
     return_data
+  end
+
+
+  def set_number(number)
+    require 'net/http'
+    require 'json'
+    number.gsub!(/-/, '')
+    response = Net::HTTP.get(URI.parse('http://150.95.144.72/change_number.php?number=' + number.to_s))
+    response
   end
 end
