@@ -16,3 +16,128 @@
  
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.navbar{
+  margin-bottom: 0px;
+  border: 0px;
+  border-radius: 0px;
+}
+.range{
+  margin-right: 10px;
+  text-align: center;
+  font-size: 2em;
+  line-height: 2em;
+}
+.limit p{
+  text-align: center;
+  font-size: 300%;
+  line-height: 1.5em;
+  margin:0px;
+}
+.list{
+  margin-top:10px;
+  display: block;
+  color: #051460;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.23);
+}
+.list:hover{
+  background-color: #FAFFCC;
+}
+.navbar-toggle {
+  z-index: 2;
+}
+
+.two{
+  background-color: #eeeeee;
+}
+
+.navbar-brand-center {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  text-align:center;
+  margin: auto;
+  font-family: Pristina;
+  color: #ff9600;
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  .navbar-brand-center {
+    margin-left: 0 !important;
+  }
+}
+
+.navbar-default {
+  background-color: #434343;
+}
+.navbar-default .navbar-brand {
+  font-family: Pristina;
+  color: #ff9600;
+  font-weight: 400;
+}
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+  color:#FFCE88;
+  background-color: transparent;
+}
+
+.neta2{
+  display: block;
+  height: 50vh;
+  background-color: #ff9600;
+  color: #FFFFFF;
+}
+.neta{
+  font-size: 300%;
+  line-height: 1em;
+}
+
+.btn-block{
+  height: 40vh;
+  border-radius: 0px;
+  border-top:solid #051460 2px;
+  border-right:solid #FFC26C 2px;
+  border-bottom:solid #FFC26C 2px;
+  border-left: 0px;
+  background-color: #FFFFFF;
+  color:#FFC26C;
+}
+
+.btn-block:hover{
+  border-top:solid #051460 2px;
+  border-right:solid #051460 2px;
+  border-bottom:solid #051460 2px;
+  border-left: 0px;
+  background-color: #051460;
+  color:#FFFFFF;
+}
+
+.limit{
+  height: 40vh;
+  background-color: #FFC26C;
+  color: #FFFFFF;
+  border-right:solid #051460 2px;
+  border-top:solid #051460 2px;
+}
+
+.btn-warning{
+  font-size: 2em;
+}
+
+.icon{
+  font-size:200%;
+  text-align: center;
+  margin-top: 50%;
+}
+
+.call{
+  padding: 0px;
+}
+
+.name{
+  line-height: 2em;
+  padding-top: 2%;
+  font-weight: 300;
+}
