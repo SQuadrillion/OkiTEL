@@ -4,7 +4,7 @@ class RegistersController < ApplicationController
   # GET /registers
   # GET /registers.json
   def index
-    @registers = Register.all
+    @registers = Register.all.order("time ASC")
   end
 
   # GET /registers/1
