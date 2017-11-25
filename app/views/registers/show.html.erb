@@ -27,3 +27,27 @@
 
 <%= link_to 'Edit', edit_register_path(@register) %> |
 <%= link_to 'Back', registers_path %>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 neta2">
+      <p class="name"><%= @register.name %>さん</p>
+      <p class="neta"><%= @register.todo %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6 limit rel">
+      <div class="icon">
+        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+      </div>
+      <p><%= @register.number %></p>
+    </div>
+    <div class="col-xs-6 call">
+      <button type="button" class="btn btn-warning btn-lg btn-block">
+        <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></button>
+    </div>
+
+  </div>
+</div>
+</div>
