@@ -16,6 +16,8 @@ class Register < ApplicationRecord
   # end
 
   def self.time_range
-   [5, 10, 15, 20, 25, 30]
+   ary = Array.new
+   35.times{ |i| ary << i if i % 5 == 0  }
+   ary
   end
 end
