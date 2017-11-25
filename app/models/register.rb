@@ -7,13 +7,13 @@ class Register < ApplicationRecord
 
   # データ追加時に実行
   after_commit do
-    BroadcastRegisterJob.perform_later(self)
+    BroadcastRegisterJob.perform_later(self, false)
   end
 
   # データ削除時に実行
-  # after_destroy do
-  #  BroadcastRegisterJob.perform_later(self)
-  # end
+  after_destroy do
+    BroadcastRegisterJob.perform_later(self, true)
+  end
 
   def self.time_range
    ary = Array.new
