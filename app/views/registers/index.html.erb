@@ -1,30 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <% Register.all.each do |r| %>
+  <a class="row list" href="show/<%= r.id %>">
+    <div class="col-xs-12">
+      <div class="text-center">
+        <div class="col-xs-4">
+          <div style="font-size:1.5em; line-height: 5em;">00:30</div>
+        </div>
+        <div class="col-xs-8">
+          <%= r.name %>さん<br><%= r.todo %>
+        </div>
+      </div>
+    </div>
+  </a>
+  <% end %>
+</div>
 
-<h1>Registers</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @registers.each do |register| %>
-      <tr id="register_<%= register.id %>">
-        <td>おなまえ:<%= register.name %> </td>
-        <td>電話番号:<%= register.number %> </td>
-        <td>ネタ:<%= register.todo %> </td>
-        <td>範囲:<%= register.range %> </td>
-        <td>何時におこしてほしい？:<%= process_datetime(register.time) %> </td>
-        <td><%= link_to 'Show', register %> </td>
-        <td><%= link_to 'Edit', edit_register_path(register) %> </td>
-        <td><%= link_to 'Destroy', register, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Register', new_register_path %>
