@@ -10,5 +10,5 @@ App.register = App.cable.subscriptions.create "RegisterChannel",
     if data.is_delete
       # hoge
     else
-      $("tbody").prepend("<tr id=\"register_#{data.id}\"><td>おなまえ:#{data.name}</td><td>電話番号:#{data.number}</td><td>ネタ:#{data.todo}</td><td>範囲:#{data.range}</td><td>何時におこしてほしい？:#{register.time}</td></tr>");
+      $("tbody").prepend("<tr id=\"register_#{data.id}\"><td>おなまえ:#{data.name}</td><td>電話番号:#{data.number}</td><td>ネタ:#{data.todo}</td><td>範囲:#{data.range}</td><td>何時におこしてほしい？:#{data.time}</td></tr>");
     console.log(data);
