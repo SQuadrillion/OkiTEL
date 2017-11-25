@@ -1,0 +1,42 @@
+<%= form_with(model: register, local: true) do |form| %>
+  <% if register.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(register.errors.count, "error") %> prohibited this register from being saved:</h2>
+
+      <ul>
+      <% register.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="name-field">
+    <%= form.label "あなたのなまえをにゅうりょくしてね" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="number-field">
+    <%= form.label "電話番号を入力してね" %>
+    <%= form.text_field :number %>
+  </div>
+
+  <div class="todo-field">
+    <%= form.label "おこしてくれたらなにやる？" %>
+    <%= form.text_field :todo %>
+  </div>
+
+  <div class="time-field">
+    <%= form.label "何時におこしてほしいの？" %>
+    <%= form.datetime_select :time, {}, class: 'form-control' %>
+  </div>
+
+  <div class="range-field">
+    <%= form.label "ぷらまい何分まで許容できる？" %>
+    <%= form.select :range, Register.time_range, { prompt: '選択してください' } %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  number: MyString
+  range: 1
+  time: 2017-11-25 15:42:16
+  todo: MyString
+
+two:
+  name: MyString
+  number: MyString
+  range: 1
+  time: 2017-11-25 15:42:16
+  todo: MyString
