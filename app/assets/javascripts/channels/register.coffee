@@ -8,7 +8,7 @@ App.register = App.cable.subscriptions.create "RegisterChannel",
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
     if data.is_delete
-      # hoge
+      $("#register_#{data.id}").remove();
     else
       $("tbody").prepend("<tr id=\"register_#{data.id}\"><td>おなまえ:#{data.name}</td><td>電話番号:#{data.number}</td><td>ネタ:#{data.todo}</td><td>範囲:#{data.range}</td><td>何時におこしてほしい？:#{data.time}</td></tr>");
     console.log(data);
