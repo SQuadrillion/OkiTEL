@@ -18,12 +18,14 @@
 
   <div class="number-field">
     <%= form.label "電話番号を入力してね" %>
-    <%= form.text_field :number %>
+    <%= form.text_field :number_1 %>-
+    <%= form.text_field :number_2 %>-
+    <%= form.text_field :number_3 %>
   </div>
 
   <div class="todo-field">
     <%= form.label "おこしてくれたらなにやる？" %>
-    <%= form.text_field :todo %>
+    <%= form.text_area :todo %>
   </div>
 
   <div class="time-field">

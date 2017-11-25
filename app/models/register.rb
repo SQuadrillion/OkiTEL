@@ -1,7 +1,7 @@
 class Register < ApplicationRecord
   validates :name, presence: true, uniqueness: true
-  validates :number, presence: true, format: { with: /0\d{1,4}-\d{1,4}-\d{4}/,
-                                              message: '電話番号を入力してね(ハイフンも)' }
+  validates :number, presence: true, format: { with: /0\d{1,4}-\d{1,4}-\d{4}/, 
+                                              message: '電話番号を入力してね' }
   validates :time, presence: true
   validates :todo, presence: true
 
