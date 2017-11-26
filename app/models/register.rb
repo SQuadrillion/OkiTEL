@@ -6,7 +6,7 @@ class Register < ApplicationRecord
   validates :todo, presence: true
 
   # データ追加時に実行
-  after_commit do
+  after_save do
     BroadcastRegisterJob.perform_later(self, false)
   end
 
