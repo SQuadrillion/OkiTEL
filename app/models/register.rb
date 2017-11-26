@@ -12,7 +12,7 @@ class Register < ApplicationRecord
   end
 
   # データ削除時に実行
-  after_destroy do
+  before_destroy do
     puts("[callback] after_destroy called!")
     BroadcastRegisterJob.perform_later(self, true)
   end
