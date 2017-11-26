@@ -26,7 +26,7 @@ class RegistersController < ApplicationController
   def create
     @register = Register.new(register_params)
     if @register.save
-      redirect_to @register, notice: 'Register was successfully created.'
+      redirect_to registers_url, notice: 'Register was successfully created.'
     else
       render :new 
     end
@@ -36,7 +36,7 @@ class RegistersController < ApplicationController
   # PATCH/PUT /registers/1.json
   def update
     if @register.update(register_params)
-      redirect_to @register, notice: 'Register was successfully updated.'
+      redirect_to registers_url, notice: 'Register was successfully updated.'
     else
       render :edit
     end
