@@ -7,6 +7,7 @@ App.register = App.cable.subscriptions.create "RegisterChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
+    console.log("おあらおらおあおあおあおあおあおあふぉあろあｓろあろらおあ")
     if data.is_delete
       console.log(data)
       $("#r_#{data.id}").remove();
