@@ -13,7 +13,7 @@
       <div class="icon">
         <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
       </div>
-      <p><%= @register.time.hour.to_s + ":" +  @register.time.min.to_s %></p>
+      <p><%= @register.time.strftime("%H:%M") %></p>
     </div>
     <div class="col-xs-6 call">
       <button type="button" class="btn btn-warning btn-lg btn-block"
