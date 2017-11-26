@@ -55,7 +55,7 @@ function countTime() {
         s = '0' + s;
       }
 
-      $("#r_" + remain_times[index][0] + "> div > div > div.col-xs-4 > div").text(m + ":" + s);
+      $("#r_" + remain_times[index][0] + "> div > div > div.col-xs-4 > div").text(h + ":" + m + ":" + s);
     }
   });
   setTimeout('countTime()', 1000);
