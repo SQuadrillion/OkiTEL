@@ -4,8 +4,8 @@ $(function(){
 });
 
 function requestAPI(){
-  // url = "https://okoshite-nyan.herokuapp.com/api/call/remain_times"
-  url = "http://localhost:30101/api/call/remain_times"
+  url = "https://okoshite-nyan.herokuapp.com/api/call/remain_times"
+  // url = "http://localhost:30101/api/call/remain_times"
 
   $.get(url, function(data){
     $.each(data, function(index, value){
