@@ -28,7 +28,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -41,8 +41,8 @@ Rails.application.configure do
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
-  # config.action_cable.url = 'wss://example.com/cable'
-  config.action_cable.allowed_request_origins = [ /https?:\/\/.*/ ]
+  config.action_cable.url = 'wss://okoshite-nyan.herokuapp.com/cable'
+  config.action_cable.allowed_request_origins = [ 'http://okoshite-nyan.herokuapp.com', 'https://okoshite-nyan.herokuapp.com' ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
