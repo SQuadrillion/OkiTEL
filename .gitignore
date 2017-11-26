@@ -18,3 +18,4 @@
 
 .byebug_history
 .idea
+*.sqlite3
