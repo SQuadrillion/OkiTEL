@@ -1,9 +1,16 @@
 class TwilioController < ApplicationController
+  include TwilioHelper
+
   def callback
     if params[:DialCallStatus] == "completed" || params[:DialCallStatus] == "answered"
-      render html: "<div>deleted</div>"
+      register = Register.find_by(number: get_number())
+      if register.destroy
+        render html: "destroyed"
+      else
+        render html: "destroy failed"
+      end
     else
-      render html: "<div>non deleted</div>"
+      render html: "non destroyed"
     end
   end
 end

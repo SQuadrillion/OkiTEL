@@ -20,4 +20,19 @@ class Register < ApplicationRecord
    35.times{ |i| ary << i if i % 5 == 0  }
    ary
   end
+
+  def self.return_to_id_and_time
+    registers = self.all
+    data = []
+
+    # js datetime format memo 2009/08/11 08:14:45
+    registers.each do |register|
+      data << {
+        id: register.id,
+        time: register.time.strftime("%Y/%m/%d %H:%M:00")
+      }
+    end
+
+    data
+  end
 end

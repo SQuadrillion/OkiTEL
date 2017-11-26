@@ -1,10 +1,11 @@
 <div id="container" class="container-fluid">
-  <% Register.all.each do |r| %>
-  <a id="r_#{r.id}" class="row list" href="registers/<%= r.id %>">
+  <div class="test">testだにゃん</div>
+  <% @registers.each do |r| %>
+  <a id="r_<%= r.id %>" class="row list" href="registers/<%= r.id %>">
     <div class="col-xs-12">
       <div class="text-center">
         <div class="col-xs-4">
-          <div style="font-size:1.5em; line-height: 5em;">00:30</div>
+          <div class="time" style="font-size:1.5em; line-height: 5em;">00:30</div>
         </div>
         <div class="col-xs-8">
           <%= r.name %>さん<br><%= r.todo %>
@@ -14,4 +15,3 @@
   </a>
   <% end %>
 </div>
-

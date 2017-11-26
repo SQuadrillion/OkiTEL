@@ -5,4 +5,9 @@ class Api::CallController < ApplicationController
     @registers = Register.where('time < ?', current_time)
     render json: @registers
   end
+
+  def remain_times
+    @register_time_and_id = Register.return_to_id_and_time
+    render json: @register_time_and_id
+  end
 end
