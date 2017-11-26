@@ -4,7 +4,7 @@ $(function(){
 });
 
 function requestAPI(){
-  url = "http://localhost:30101/api/call/remain_times"
+  url = "https://okoshite-nyan.herokuapp.com/api/call/remain_times"
   
   $.get(url, function(data){
     $.each(data, function(index, value){
@@ -22,13 +22,10 @@ function countTime() {
   var left_times = [];
 
   $.each(remain_times, function(index, value){
-    // console.log(remain_times[index][1]);
     current_datetime = Date.parse(remain_times[index][1]);
-    // console.log(current_datetime);
     left_times.push(current_datetime - startDateTime);
   });
 
-  console.log(left_times);
   $.each(left_times, function(index, value){
     var a_day = 24 * 60 * 60 * 1000;
     // 期限から現在までの『残時間の日の部分』
