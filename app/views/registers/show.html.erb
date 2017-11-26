@@ -1,8 +1,11 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xs-12 neta2">
+    <div class="col-xs-12 neta2" style="position:relative;">
       <p class="name"><%= @register.name %>さん</p>
       <p class="neta"><%= @register.todo %></p>
+      <div style="position:absolute;bottom:0">
+        <%= link_to '削除', @register, method: :delete %>
+      </div>
     </div>
   </div>
   <div class="row">
