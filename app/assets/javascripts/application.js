@@ -17,3 +17,4 @@
 //= require_tree .
 
 var remain_times = []
+
