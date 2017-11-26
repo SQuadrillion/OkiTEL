@@ -1,6 +1,6 @@
 <%= form_with(model: register, local: true) do |form| %>
   <% if register.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="col-xs-12">
       <h2><%= pluralize(register.errors.count, "error") %> prohibited this register from being saved:</h2>
 
       <ul>
@@ -11,34 +11,54 @@
     </div>
   <% end %>
 
-  <div class="name-field">
-    <%= form.label "あなたのなまえをにゅうりょくしてね" %>
-    <%= form.text_field :name %>
+  <div class="name-field col-xs-12 form-group">
+    <div class="c-field-title">
+      <%= form.label "あなたのなまえをにゅうりょくしてね" %>
+    </div>
+    <div class="c-field-body">
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="number-field">
-    <%= form.label "電話番号を入力してね" %>
-    <%= form.text_field :number_1 %>-
-    <%= form.text_field :number_2 %>-
-    <%= form.text_field :number_3 %>
+  <div class="number-field col-xs-12 form-group">
+    <div class="c-field-title">
+      <%= form.label "電話番号を入力してね" %>
+    </div>
+    <div class="c-field-body">
+      <%= form.text_field :number_1, class: "form-control bootstrap-inline" %>-
+      <%= form.text_field :number_2, class: "form-control bootstrap-inline" %>-
+      <%= form.text_field :number_3, class: "form-control bootstrap-inline" %>
+    </div>
   </div>
 
-  <div class="todo-field">
-    <%= form.label "おこしてくれたらなにやる？" %>
-    <%= form.text_area :todo %>
+  <div class="todo-field col-xs-12 form-group">
+    <div class="c-field-title">
+      <%= form.label "おこしてくれたらなにやる？" %>
+    </div>
+    <div class="c-field-body">
+      <%= form.text_area :todo, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="time-field">
-    <%= form.label "何時におこしてほしいの？" %>
-    <%= form.datetime_select :time, {}, class: 'form-control' %>
+  <div class="time-field col-xs-12 form-group">
+    <div class="c-field-title">
+      <%= form.label "何時におこしてほしいの？" %>
+    </div>
+    <div class="c-field-body">
+      <%= form.datetime_select :time, {use_month_numbers: true}, {class: 'form-control bootstrap-inline'} %>
+    </div>
   </div>
 
-  <div class="range-field">
-    <%= form.label "ぷらまい何分まで許容できる？" %>
-    <%= form.select :range, Register.time_range, { prompt: '選択してください' } %>
+  <div class="range-field col-xs-12 form-group">
+    <div class="c-field-title">
+      <%= form.label "ぷらまい何分まで許容できる？" %>
+    </div>
+    <div class="c-field-body">
+      <%= form.select :range, Register.time_range, { prompt: '選択してください' }, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions col-xs-12 form-group">
+    <%= form.submit :Submit, class: 'btn btn-success fullwidth' %>
   </div>
 <% end %>

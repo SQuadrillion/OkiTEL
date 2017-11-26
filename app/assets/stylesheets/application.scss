@@ -17,6 +17,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.fullwidth{
+  width: 100%;
+}
+
 .navbar{
   margin-bottom: 0px;
   border: 0px;
@@ -140,4 +144,23 @@
   line-height: 2em;
   padding-top: 2%;
   font-weight: 300;
+}
+
+/* _form.html.erb */
+
+.container-fluid {
+  .c-field-body {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.bootstrap-inline {
+  // width : calc((100% - 30px) / 3);
+  display: inline-block;
+  width: auto;
+}
+
+.number-field input[type="text"] {
+  width: calc((100% - 30px) / 3);
 }
