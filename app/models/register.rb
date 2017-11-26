@@ -7,12 +7,13 @@ class Register < ApplicationRecord
 
   # データ追加時に実行
   after_save do
+    puts("[callback] after_save called")
     BroadcastRegisterJob.perform_later(self, false)
   end
 
   # データ削除時に実行
   after_destroy do
-    puts("ちんちん")
+    puts("[callback] after_destroy called")
     BroadcastRegisterJob.perform_later(self, true)
   end
 
