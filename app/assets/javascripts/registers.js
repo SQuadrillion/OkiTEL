@@ -4,8 +4,9 @@ $(function(){
 });
 
 function requestAPI(){
-  url = "https://okoshite-nyan.herokuapp.com/api/call/remain_times"
-  
+  url = "https://okoshite-nyan.herokuapp.com/registers/new/api/call/remain_times"
+  // url = "http://localhost:30101/api/call/remain_times"
+
   $.get(url, function(data){
     $.each(data, function(index, value){
       remain_times.push([data[index].id, data[index].time]);
@@ -43,7 +44,19 @@ function countTime() {
     // 更にそれを60で割った余りとして、「分」で割った余りとしての『残時間の秒の部分』を出す
     var s = Math.floor((left_times[index] % a_day) / 1000) % 60 % 60
 
-    $("#r_" + remain_times[index][0] + "> div > div > div.col-xs-4 > div").text(m + ':' + s);
+    if(Number(s) < 0 && Number(m) < 0){
+      $("#r_" + remain_times[index][0]).remove();  
+    }else{
+      if (m < 10) {
+        m = '0' + m;
+      }
+
+      if (s < 10) {
+        s = '0' + s;
+      }
+
+      $("#r_" + remain_times[index][0] + "> div > div > div.col-xs-4 > div").text(m + ":" + s);
+    }
   });
   setTimeout('countTime()', 1000);
 }
