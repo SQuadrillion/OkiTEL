@@ -12,4 +12,4 @@ logo designed by ryo.
 
 ## Slides
 
-Slide used in presentation will be (soon) available on SlideShare.
+<script async class="speakerdeck-embed" data-id="baecd966c756416f9248bb8163d11095" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
